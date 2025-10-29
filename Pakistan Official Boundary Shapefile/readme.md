@@ -31,4 +31,4 @@ It contains two key attributes:
 ## 🌐 Google Earth Engine Asset
 
 The same boundary data is available as a hosted asset in **Google Earth Engine (GEE)**:
-
+var Pakistan = ee.FeatureCollection("projects/ee-muddasir-shah/assets/Pakistan_Official_Boundary");
