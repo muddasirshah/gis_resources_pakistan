@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pakistan Official Boundary Shapefile</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      color: #24292e;
+      background-color: #fff;
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    h1, h2, h3 {
+      color: #111;
+    }
+    code {
+      background: #f6f8fa;
+      padding: 2px 5px;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+    pre {
+      background: #f6f8fa;
+      padding: 10px;
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 16px 0;
+    }
+    th, td {
+      border: 1px solid #dfe2e5;
+      text-align: left;
+      padding: 8px;
+    }
+    th {
+      background-color: #f6f8fa;
+    }
+    blockquote {
+      border-left: 4px solid #dfe2e5;
+      color: #555;
+      padding-left: 16px;
+      margin-left: 0;
+      font-style: italic;
+    }
+    a {
+      color: #0366d6;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🇵🇰 Pakistan Official Boundary Shapefile</h1>
+
+  <p>This repository contains the <strong>official administrative boundary shapefile of Pakistan</strong>, including both <strong>district</strong> and <strong>province-level</strong> boundaries.  
+  The same dataset is also hosted as a <strong>Google Earth Engine (GEE) asset</strong> for easy integration into geospatial workflows.</p>
+
+  <hr />
+
+  <h2>📂 Repository Contents</h2>
+
+  <table>
+    <tr><th>File</th><th>Description</th></tr>
+    <tr><td><code>Pakistan_Official_Boundary.shp</code></td><td>Main shapefile containing the district and province boundaries.</td></tr>
+    <tr><td><code>Pakistan_Official_Boundary.dbf</code></td><td>Attribute table containing district and province names.</td></tr>
+    <tr><td><code>Pakistan_Official_Boundary.shx</code></td><td>Shapefile index.</td></tr>
+    <tr><td><code>Pakistan_Official_Boundary.prj</code></td><td>Projection information.</td></tr>
+  </table>
+
+  <h2>🗺️ Description</h2>
+
+  <p>The shapefile represents the <strong>official administrative boundaries</strong> of Pakistan, suitable for GIS, remote sensing, and spatial data analysis applications.  
+  It contains two key attributes:</p>
+
+  <table>
+    <tr><th>Column</th><th>Description</th></tr>
+    <tr><td><code>DISTRICT</code></td><td>Name of the district.</td></tr>
+    <tr><td><code>PROVINCE</code></td><td>Name of the province each district belongs to.</td></tr>
+  </table>
+
+  <h2>🌐 Google Earth Engine Asset</h2>
+
+  <p>The same boundary data is available as a hosted asset in <strong>Google Earth Engine (GEE)</strong>:</p>
+
+  <pre><code>projects/ee-muddasir-shah/assets/Pakistan_Official_Boundary</code></pre>
+
+  <h3>Example usage in GEE:</h3>
+
+  <pre><code>var pakistan = ee.FeatureCollection("projects/ee-muddasir-shah/assets/Pakistan_Official_Boundary");
+
+// Display
+Map.addLayer(pakistan, {}, "Pakistan Official Boundary");
+Map.centerObject(pakistan, 5);
+
+// Example: Filter a province
+var punjab = pakistan.filter(ee.Filter.eq("PROVINCE", "Punjab"));
+Map.addLayer(punjab, {color: "red"}, "Punjab");
+</code></pre>
+
+  <h2>🧭 Coordinate Reference System (CRS)</h2>
+
+  <p>The shapefile uses <strong>WGS 84 (EPSG:4326)</strong> — suitable for most global and web mapping applications.</p>
+
+  <h2>🧩 Applications</h2>
+
+  <ul>
+    <li>Geospatial visualization and mapping</li>
+    <li>Remote sensing and Earth Engine analysis</li>
+    <li>District/province-level statistical analysis</li>
+    <li>Environmental and socio-economic modeling</li>
+  </ul>
+
+  <h2>⚖️ License & Attribution</h2>
+
+  <p>This dataset represents the <strong>official administrative boundaries</strong> of Pakistan.  
+  Use responsibly and attribute as:</p>
+
+  <blockquote>
+    <p><strong>Source:</strong> Official Pakistan Boundary Data (as hosted by <a href="https://github.com/muddasirshah">Muddasir Shah</a>)<br>
+    <strong>Projection:</strong> WGS84 (EPSG:4326)</p>
+  </blockquote>
+
+  <h2>📧 Contact</h2>
+
+  <p><strong>Muddasir Shah</strong><br>
+  ML Engineer | Remote Sensing & GIS Analyst<br>
+  📩 <a href="https://github.com/muddasirshah">GitHub Profile</a></p>
+
+</body>
+</html>
